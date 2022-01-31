@@ -1,63 +1,38 @@
 #include<stdio.h>
 
-void input_two_string(char *a, char *b)
+float input()
 {
- printf("Enter a word: ");
- scanf("%s", a);
- printf("Enter a word: ");
- scanf("%s", b);
+  float n;
+  printf("enter a number: ");
+  scanf("%f" , &n);
+  return n;
 }
 
-int cmp(char *a, char *b)
+float my_sqrt(float n)
 {
- int i=0, result;
- while(a[i] != '\0' && b[i] != '\0')
- {
-  if(a[i] > b[i])
+  if(n == 0|| n == 1)
   {
-   result = -1;
-   break;
-   }
-   else if(b[i] > a[i])
-   {
-    result = 1;
-    break;
-    }
-    else
-    {
-     i++;
-    }  
+    return n;
   }
-  if(a[i] == '\0')
-  {
-   result = 1;
-  }
-  else if(b[i] == '\0')
-  {
-   result = -1;
-  }
-  if(a[i] == '\0' && b[i] == '\0')
-  {
-   result = 0;
-  }
-return result;
+
+float i = 1, ans = 1;
+while(ans <= n)
+{
+  i++;
+  ans = i * i;
+}
+return i - 1;
+}
+void output(float n,float sqrt_result)
+{
+  printf("the square root of %0.2f is : %0.2f\n",n,sqrt_result);
 }
 
-void output(char *a, char *b, int ans){
-    if(ans == -1){
-      printf("%s is greater than %s\n", a, b);
-    }else if(ans == 1){
-      printf("%s is greater than %s\n", b, a);
-    }else{
-       printf("%s is equal to %s\n", b, a);
-    }
-}
-
-int main(){
-  char a[20], b[20];
-  int ans;
-  input_two_string(a, b);
-  ans = cmp(a, b);
-  output(a, b, ans);
+int main()
+{
+  float n, sqrt_result;
+  n = input();
+  sqrt_result = my_sqrt(n);
+  output(n, sqrt_result);
   return 0;
-}
+  }

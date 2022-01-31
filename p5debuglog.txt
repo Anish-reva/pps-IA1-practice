@@ -20,8 +20,7 @@ No default breakpoint address now.
 (gdb) r
 Starting program: /home/runner/pps-IA1-practice/a.out 
 warning: Error disabling address space randomization: Operation not permitted
-Enter a word: 5
-Enter a word: 4
-5 is greater than 4
-[Inferior 1 (process 1429) exited normally]
+enter a number: 4
+the square root of 4.00 is : 2.00
+[Inferior 1 (process 53) exited normally]
 (gdb) 
